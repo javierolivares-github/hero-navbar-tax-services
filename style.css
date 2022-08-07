@@ -1,0 +1,453 @@
+/* ------------------------
+Basic Styles
+------------------------ */
+
+/* Google Fonts - Poppins 400, 500 and 800*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap');
+
+/* Google Fonts - Inter 500 and 800 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--gray-96);
+}
+
+/* Variables */
+:root {
+  --gray-100: hsl(0, 0%, 100%);
+  --gray-96: hsl(0, 0%, 96%);
+  --gray-10: hsl(0, 0%, 10%);
+  --yellow-sun-62: hsl(44, 100%, 62%);
+  --aussie-red-61: hsl(1, 80%, 61%);
+  --blue-41: hsl(222, 66%, 41%);
+}
+
+
+/* ---------------------------
+(2) - Navbar styles
+-----------------------------*/
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  background: var(--blue-41);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 32px;
+}
+
+.navbar__content {
+  width: 1216px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: var(--gray-96);
+  text-decoration: none;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 16px 0px;
+  border-bottom: 2px solid transparent;
+  transition: all 300ms ease-out;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  color: var(--gray-96);
+}
+
+.navbar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 16px;
+  border: none;
+  outline: none;
+  background: var(--yellow-sun-62);
+  color: var(--gray-10);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 300ms ease-out;
+}
+
+.navbar__item:hover {
+  border-bottom: 2px solid var(--gray-96);
+  transition: all 300ms ease-out;
+}
+
+.button:hover {
+  background: var(--aussie-red-61);
+  color: var(--gray-96);
+  transition: all 300ms ease-out;
+}
+
+/* Tablets and Mobiles*/
+.menu__icon-menu {
+  color: var(--gray-96);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu__toggle {
+  display: none;
+}
+
+@media screen and (max-width: 1040px) {
+  .navbar {
+    position: relative;
+    z-index: 999;
+    padding: 0px 40px;
+  }
+
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 28px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    background: var(--blue-41);
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 76px 40px;
+    opacity: 0;
+    transition: all 500ms ease-out;
+  }
+
+  .navbar__menu.active {
+    left: 0;
+    opacity: 1;
+    transition: all 500ms ease-out;
+  }
+
+  .menu__toggle {
+    display: block;
+  }
+}
+
+/* Some adjustments for mobile */
+@media screen and (max-width: 560px) {
+  .navbar {
+    padding: 0px 20px;
+  }
+
+  .logo {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+/* ------------------------------
+(6) - Hero styles and next section
+------------------------------ */
+
+/* Mobiles */
+@media screen and (min-width: 340px) {
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 590px;
+    background: var(--blue-41);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    overflow: hidden;
+  }
+
+  /* Hero main */
+  .hero__main {
+    width: 100%;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 32px;
+    z-index: 2;
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .hero__text .title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--gray-96);
+  }
+
+  .hero__text .copy {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--gray-96);
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 313px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .hero__image img {
+    width: 320px;
+    height: 313px;
+    object-fit: cover;
+  }
+
+  /* Hero circles */
+  .circle-1 {
+    position: absolute;
+    top: 360px;
+    left: -2%;
+    width: 64vw;
+    height: 64vw;
+    background: var(--gray-96);
+    opacity: 10%;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  .circle-2 {
+    position: absolute;
+    top: 440px;
+    left: 50%;
+    width: 64vw;
+    height: 64vw;
+    background: var(--yellow-sun-62);
+    opacity: 90%;
+    border-radius: 100%;
+    z-index: 1;
+  }
+
+  /* Hero smile */
+  .hero__smile {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    align-self: flex-end;
+    z-index: 3;
+  }
+
+  .next__section {
+    position: relative;
+    top: -3px;
+    width: 100%;
+    height: 120px;
+    background: var(--gray-96);
+    z-index: 3;
+  }
+}
+
+/* --------------------------
+Hero - Tablets and small laptops
+---------------- -----------*/
+
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 516px;
+    padding: 0 40px;
+  }
+
+  .hero__main {
+    max-width: 1200px;
+    height: 516px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .hero__image {
+    order: 0;
+    width: 50%;
+    height: auto;
+  }
+
+  .hero__image img {
+    width: 328px;
+    height: 420px;
+  }
+
+  .hero__text {
+    order: 1;
+    width: 50%;
+    align-self: flex-start;
+    padding-top: 144px;
+    align-items: flex-start;
+    gap: 0px;
+  }
+
+  .hero__text .title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .hero__text .copy {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  .circle-1 {
+    top: 184px;
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .circle-2 {
+    top: 330px;
+    left: 42%;
+    width: 50vw;
+    height: 50vw;
+  }
+}
+
+/* ------------------------
+Hero - Desktops
+------------------------ */
+
+@media screen and (min-width: 1300px) {
+  .hero {
+    height: 720px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .hero__main {
+    max-width: 1216px;
+    height: 720px;
+    align-items: flex-end;
+  }
+
+  .hero__image {
+    width: 60%;
+    height: 100;
+  }
+
+  .hero__image img {
+    width: 92%;
+    height: 92%;
+    object-fit: cover;
+  }
+
+  .hero__text {
+    width: 40%;
+    height: 100%;
+    padding-top: 182px;
+    gap: 0px;
+  }
+
+  .hero__text .title {
+    font-size: 96px;
+    line-height: 96px;
+    letter-spacing: -0.02em;
+    text-align: start;
+    margin-bottom: 16px;
+  }
+
+  .hero__text .copy {
+    font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .circle-1 {
+    left: 4%;
+  }
+
+  .circle-2 {
+    top: 550px;
+    left: 44%;
+  }
+}
+
+/*---------------------------
+Some adjustment to hero smile
+---------------------------*/
+
+@media screen and (min-width: 920px) {
+  .hero__smile {
+    bottom: -30px;
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .hero__smile {
+    bottom: -60px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .hero__smile {
+    bottom: -80px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .hero__smile {
+    bottom: -90px;
+  }
+}
